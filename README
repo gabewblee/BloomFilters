@@ -1,0 +1,68 @@
+BloomFilters
+============
+
+What is this?
+-------------
+
+This repository contains the implementation of a standard Bloom Filter and a
+Blocked Bloom Filter. The two implementations are empirically compared using a
+static dataset under varying numbers of hash functions, bits per entry, filter
+sizes, and load factors.
+
+
+Requirements
+------------
+
+* g++
+* make
+* python3
+* python3-venv
+* pip
+
+
+Building
+--------
+
+To build the project:
+
+	make build
+
+To remove executables and experimental results:
+
+	make clean
+
+
+Testing
+-------
+
+To test the filter implementations:
+
+	make test
+
+
+Experiments
+-----------
+
+To run all experiments:
+
+	make experiment
+
+
+Project Layout
+--------------
+
+src/
+	BloomFilter.cpp/.hpp      		- Standard Bloom Filter implementation
+	BlockedBloomFilter.cpp/.hpp 	- Blocked Bloom Filter implementation
+	Experiments.cpp           		- Experiment driver
+	plot.py                         - Plots experimental results
+
+tests/
+	TestBloomFilter.cpp/.hpp        - Tests for Bloom Filter
+	TestBlockedBloomFilter.cpp/.hpp - Tests for Blocked Bloom Filter
+
+libs/
+	xxhash.c/.h 					- xxHash library for hashing
+
+data/
+	data.txt						- Static dataset used in experiments
